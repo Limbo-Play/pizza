@@ -3,9 +3,11 @@ const HAWAII = 'HAWAII'
 const FIVECHEESE = 'FIVECHEESE'
 const CARBONARO = 'CARBONARO'
 const TOSCANO = 'TOSCANO'
+
 const SMALL = 'SMALL'
 const MEDIUM = 'MEDIUM'
 const BIG = 'BIG'
+
 const TIN = 'TIN'
 const STANDART = 'STANDART'
 function Pizza(name, size, dough_type) {
@@ -60,26 +62,40 @@ function getPrice(name, size) {
     let priceOfSmallPizza = getPriceForSmallPizzaByName(name)
     return getPizzaPriceBySize(size, priceOfSmallPizza)
 }
-let paperoni = Pizza(PAPERONI, MEDIUM, 'TIN')
-let toscano = Pizza(TOSCANO, SMALL, 'STANDART')
-let carbonara = Pizza(CARBONARO, BIG, 'TIN')
-let hawaii = Pizza(HAWAII, MEDIUM, 'TIN')
-console.log(toscano)
-console.log(paperoni)
-console.log(carbonara)
+let paperoni2 = Pizza(PAPERONI, MEDIUM, 'TIN')
+let toscano1 = Pizza(TOSCANO, SMALL, 'STANDART')
+let hawaii2 = Pizza(HAWAII, MEDIUM, 'TIN')
+let carbonaro3 = Pizza(CARBONARO, BIG, 'STANDART')
+
+
+
 function Card(arrayOfPizza, adressa) {
     card = {};
     card.arrayOfPizza = arrayOfPizza;
     card.adressa = adressa;
     card.price = calculatePrice(arrayOfPizza);
-    console.log(card)
+    return card
 }
 const calculatePrice = (arrayOfPizza) => {
    return arrayOfPizza.reduce((acc, el) => acc + el.price,0)
 }
-console.log(Card([paperoni,toscano], 'Gorodok'))
+
+let Cart = Card([], 'Gorodok')
+
+
+
+
+
 function addPizza (arrayOfPizza, ) {
-    card.arrayOfPizza.push(arrayOfPizza);
+    Cart.arrayOfPizza.push(arrayOfPizza)
+    return card.price += arrayOfPizza.price
+   
 }
-addPizza(carbonara)
-addPizza(hawaii)
+
+
+addPizza(toscano1)
+addPizza(hawaii2)
+addPizza(paperoni2)
+addPizza(carbonaro3)
+
+console.log(Cart)
