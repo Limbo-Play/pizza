@@ -8,7 +8,7 @@ const SMALL = 'SMALL'
 const MEDIUM = 'MEDIUM'
 const BIG = 'BIG'
 
-const TIN = 'TIN'
+const THIN = 'THIN'
 const STANDART = 'STANDART'
 function Pizza(name, size, dough_type) {
     const pizza = {}
@@ -62,9 +62,9 @@ function getPrice(name, size) {
     let priceOfSmallPizza = getPriceForSmallPizzaByName(name)
     return getPizzaPriceBySize(size, priceOfSmallPizza)
 }
-let paperoni2 = Pizza(PAPERONI, MEDIUM, 'TIN')
+let paperoni2 = Pizza(PAPERONI, MEDIUM, 'THIN')
 let toscano1 = Pizza(TOSCANO, SMALL, 'STANDART')
-let hawaii2 = Pizza(HAWAII, MEDIUM, 'TIN')
+let hawaii2 = Pizza(HAWAII, MEDIUM, 'THIN')
 let carbonaro3 = Pizza(CARBONARO, BIG, 'STANDART')
 
 
